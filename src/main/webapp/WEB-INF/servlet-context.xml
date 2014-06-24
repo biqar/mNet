@@ -16,6 +16,11 @@
 
     <!-- Maps '/' requests to the 'home' view -->
     <mvc:view-controller path="/" view-name="home"/>
+    <mvc:view-controller path="/login" view-name="login"/>
+    <mvc:view-controller path="/timeout" view-name="login"/>
+    <mvc:view-controller path="/logout" view-name="logout"/>
+    <mvc:view-controller path="/uncaughtException" view-name="uncaughtException"/>
+    <mvc:view-controller path="/resourceNotFound" view-name="resourceNotFound"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
@@ -24,7 +29,6 @@
     </bean>
 
     <!-- Efficiently serving static resources; e.g. test.png will be access-able directly by <SERVER>/images/test.png URL -->
-    <mvc:resources mapping="/images/**" location="/img/"/>
-    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
 </beans>

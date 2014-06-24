@@ -19,5 +19,4 @@ public class HomeController {
         model.addAttribute("msg", "Greetings!");
         return "home";
     }
-
 }
