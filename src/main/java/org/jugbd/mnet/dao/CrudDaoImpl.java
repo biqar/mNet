@@ -26,8 +26,10 @@ public class CrudDaoImpl<T, PK extends Serializable> implements CrudDao<T, PK> {
 
     public CrudDaoImpl() {
         log.debug("CrudDaoImpl()");
+
         ParameterizedType genericSuperclass = (ParameterizedType) getClass()
                 .getGenericSuperclass();
+
         this.entityClass = (Class<T>) genericSuperclass
                 .getActualTypeArguments()[0];
     }
