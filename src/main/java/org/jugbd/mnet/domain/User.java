@@ -21,7 +21,8 @@ public class User extends Persistence implements UserDetails, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
+    @Version
+    private long version;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
@@ -197,5 +198,13 @@ public class User extends Persistence implements UserDetails, Serializable {
                 ", username='" + username + '\'' +
                 ", enabled=" + enabled +
                 '}';
+    }
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
     }
 }
